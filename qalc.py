@@ -197,9 +197,7 @@ class Qalc(QMainWindow):
         self.connect_widgets()
 
     def connect_widgets(self):
-        """
-        Connects widgets in UI to associated functions
-        """
+        """Connects widgets in UI to associated functions"""
         # Define number buttons to iterate through
         numbers = {
             "zero": 0,
@@ -233,7 +231,7 @@ class Qalc(QMainWindow):
             "right_para": ")",
         }
 
-        # Iterates through each button in operators and binds to function
+        # Binds functions to all operators in operator dictionary
         for name, operator in operators.items():
             button = getattr(self.ui, name)
             button.clicked.connect(
@@ -268,9 +266,7 @@ class Qalc(QMainWindow):
         self.ui.equation_edit.setText(self.equation)
 
     def equation_solve(self) -> None:
-        """
-        Solves equation based on user input and showing output on line edit
-        """
+        """Solves equation with user input and shows output on line edit"""
         answer = Calculate.solve(self.equation)
         self.equation = answer
         self.ui.equation_edit.setText(answer)
