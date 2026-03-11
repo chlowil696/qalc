@@ -2,4 +2,4 @@
 
 A swift and simple calculate made with Python and Qt
 
-Run the `main.py` file to start the program.
+Run the `qalc.py` file to start the program.
